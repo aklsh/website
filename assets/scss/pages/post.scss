@@ -1,0 +1,205 @@
+@import "../main";
+
+.post__container {
+  min-width: 0;
+}
+
+.post__desc {
+  color: $grey;
+  code {
+    color: inherit;
+  }
+}
+
+.post {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+
+  h2 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      left: -1.2rem;
+      color: $grey;
+      font-weight: 400;
+    }
+
+    code {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      left: -1rem;
+      color: $grey;
+      font-weight: 400;
+    }
+
+    code {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  mark {
+    background-color: transparent;
+    color: $primary;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+
+  }
+
+  img.avatar {
+    display: block;
+    border-radius: 50%;
+    background-color: #d6d6d6;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $primary;
+    margin-top: 5px;
+  }
+}
+
+.post__title {
+  margin-top: 0;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  code {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.post__date {
+  color: $primary;
+  font-size: 0.8rem;
+}
+
+.post__footer {
+  padding-top: 3rem;
+
+  p {
+    margin-top: 0;
+    color: $grey;
+    font-size: 0.65rem;
+  }
+}
+
+.tags__list {
+  list-style: none;
+  display: flex;
+  justify-content: flex;
+  padding-left: 0px;
+  margin-top: 0.5rem;
+
+  .tag__item {
+    display: inline-block;
+    margin-right: 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.tag__link {
+  text-decoration: none;
+  color: $white;
+  font-size: 0.9rem;
+
+  &::before {
+    content: "#";
+    font-size: 0.7rem;
+    padding-right: 1px;
+  }
+
+  &:hover {
+    color: lighten($black, 50%);
+  }
+
+  &:visited {
+    color: $grey;
+  }
+}
+
+.gif {
+  margin-top: 1.5rem;
+
+  img {
+    max-width: 375px;
+  }
+}
+
+/* overrides */
+.post__content {
+  ul {
+    list-style-type: square;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.twitter-tweet.twitter-tweet-rendered {
+  margin: 1.5rem auto !important;
+  width: 375px !important;
+}
+
+table {
+  max-width: 100%;
+  border-spacing: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1em;
+
+  thead {
+    background: $primary;
+    color: $black;
+  }
+
+  th,
+  td {
+    padding: 0.5em 1em;
+    border: 1px double $primary;
+  }
+}
+
+// footnote link
+a[href^="#fn:"],
+// Back to footnote link
+a[href^="#fnref:"] {
+  text-decoration: none;
+}
+
+a[href^="#fn:"]:before{ content: '[' }
+a[href^="#fn:"]:after{ content: ']' }
+
+.footnotes {
+  p {
+    margin-top: 0.5rem;
+  }
+}

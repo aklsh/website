@@ -1,0 +1,118 @@
+@import "../main";
+
+.page__container {
+  min-width: 0;
+}
+
+.page__content {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.page {
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+
+  h2 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      left: -1.2rem;
+      color: $grey;
+      font-weight: 400;
+    }
+
+    code {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  h3 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      left: -1rem;
+      color: $grey;
+      font-weight: 400;
+    }
+
+    code {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  mark {
+    background-color: transparent;
+    color: $primary;
+  }
+
+  img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+
+  }
+
+  img.avatar {
+    display: block;
+    border-radius: 50%;
+    background-color: #d6d6d6;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $primary;
+    margin-top: 5px;
+  }
+}
+
+.page__title {
+  margin-top: 0;
+
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+
+  code {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.page__footer {
+  padding-top: 3rem;
+
+  p {
+    margin-top: 0;
+    color: $grey;
+    font-size: 0.65rem;
+  }
+}
+
+// footnote link
+a[href^="#fn:"],
+// Back to footnote link
+a[href^="#fnref:"] {
+  text-decoration: none;
+}
+
+a[href^="#fn:"]:before{ content: '[' }
+a[href^="#fn:"]:after{ content: ']' }
+
+.footnotes {
+  p {
+    margin-top: 0.5rem;
+  }
+}

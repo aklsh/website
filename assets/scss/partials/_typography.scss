@@ -1,0 +1,161 @@
+@import "fonts";
+@import "vars";
+
+html {
+  font-family: IBM Plex Mono, monospace;
+  font-family: IBM Plex Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 95%;
+
+  @supports (font-variation-settings: normal) {
+    font-family: IBM Plex Sans Var, sans-serif;
+    font-optical-sizing: auto;
+  }
+
+  @media screen and (min-width: $medium) {
+    font-size: 100%;
+  }
+
+  @media screen and (min-width: $large) {
+    font-size: 115%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: $leading;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 1.5 * $scale * 1rem;
+  line-height: 1.5 * $leading;
+  margin-top: 1.5 * $leading;
+}
+
+h2 {
+  font-size: $scale * 1rem;
+}
+
+h3 {
+  font-size: ($scale / 1.2) * 1rem;
+}
+
+h4 {
+  font-size: ($scale / 1.44) * 1rem;
+}
+
+h5 {
+  font-size: ($scale / 1.728) * 1rem;
+}
+
+a {
+  color: $primary;
+}
+
+a:hover {
+  color: darken($primary, 20%);
+}
+
+a:visited {
+  color: lighten($primary, 20%);
+}
+
+p {
+  margin-top: $leading;
+  margin-bottom: 0;
+  line-height: $leading;
+}
+
+ul,
+ol {
+  padding-left: $leading;
+  margin-top: $leading;
+  margin-bottom: $leading;
+
+  li {
+    line-height: $leading;
+  }
+}
+
+ol {
+  list-style-type: decimal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+blockquote {
+  background: transparent;
+  border-left: 7px solid $primary;
+  margin: 1.5em 0px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+  font-style: italic;
+}
+
+blockquote:before {
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+pre {
+  line-height: 1.45;
+  margin-top: $leading;
+  padding: 16px;
+  word-wrap: normal;
+  overflow: auto;
+  background-color: darken($black, 2%);
+  border-radius: 3px;
+}
+
+code {
+  font-family: monospace;
+  margin: 0;
+  color: $primary;
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+pre > code {
+  word-break: normal;
+  white-space: pre;
+}
+
+pre code {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+hr {
+  margin-top: 15px;
+}
+
+.lead {
+  font-size: $scale * 1rem;
+}
+
+abbr[title] {
+  text-decoration: underline double;
+}
+
+sup, sub {
+  font-size: 0.6rem;
+}

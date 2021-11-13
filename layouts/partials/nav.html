@@ -1,0 +1,10 @@
+<nav class="nav" id="navigation">
+  <ul class="nav__list">
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>
