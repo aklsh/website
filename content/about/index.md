@@ -28,9 +28,9 @@ Here's my [resume](https://cdn.aklsh.me/resume.pdf) if you're interested in my p
 _Also, I'm a proud Chennaiite :)_
 
 ### Colophon
-This site is made with [Hugo](https://github.com/gohugoio/hugo), a static site generator written in Go. It uses a _heavily modified_ version of the [Codex theme](https://github.com/jakewies/hugo-theme-codex) by [Jake Wiesler](https://www.jakewiesler.com). It uses minimal JavaScript—rendering $\LaTeX$ and a responsive navigation burger menu—no analytics and improved accessibility for screen readers.
+This site is made with [Hugo](https://github.com/gohugoio/hugo), a static site generator written in Go. It uses a _heavily modified_ version of the [Codex theme](https://github.com/jakewies/hugo-theme-codex) by [Jake Wiesler](https://www.jakewiesler.com). It uses minimal JavaScript for rendering $\LaTeX$ and a responsive navigation burger menu, improved accessibility for screen readers.
 
-The source code can be found in this GitHub repository [here](https://github.com/aklsh/website)[^1], MIT-licensed. This site is hosted on a DigitalOcean droplet (BLR Region)[^2]. There are a few redirects—using NGINX—for having a vanity handle on the fediverse :p
+The source code can be found in this GitHub repository [here](https://github.com/aklsh/website)[^1], MIT-licensed. This site is hosted on a DigitalOcean droplet (BLR Region)[^2]. 
 
 The font used is IBM Plex, with IBM Plex Sans for text and IBM Plex Mono for code.
 

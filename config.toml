@@ -31,6 +31,14 @@ FootnoteReturnLinkContents = "↩︎"
     mediatype = "application/rss"
     baseName = "rss"
 
+
+[outputs]
+  home = ['html', 'rss']
+  section = ['html']
+  taxonomy = ['html']
+  term = ['html']
+
+
 # This disables Hugo's default syntax highlighting in favor
 # of prismjs. If you wish to use Hugo's default syntax highlighting
 # over prismjs, remove this. You will also need to remove the prismjs
