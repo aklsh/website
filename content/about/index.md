@@ -21,11 +21,9 @@ Here's somethings that you can talk to me about:
 3. Music. Alternative, Rock, Electronic.
 4. Ricing. I sometimes post my rices on r/unixporn.
 5. Gaming. I play with a controller instead of a keyboard.
-6. Motorsport. I keep up with F1,2,3,E and am an avid fan of Scuderia Ferrari (sad 2022 noises).
+6. Motorsport. I keep up with F1,2,3,E and am an avid fan of Scuderia Ferrari (sad noises).
 
 Here's my [resume](https://cdn.aklsh.me/resume.pdf) if you're interested in my professional life.
-
-_Also, I'm a proud Chennaiite :)_
 
 ### Colophon
 This site is made with [Hugo](https://github.com/gohugoio/hugo), a static site generator written in Go. It uses a _heavily modified_ version of the [Codex theme](https://github.com/jakewies/hugo-theme-codex) by [Jake Wiesler](https://www.jakewiesler.com). It uses minimal JavaScript for rendering $\LaTeX$ and a responsive navigation burger menu, improved accessibility for screen readers.
