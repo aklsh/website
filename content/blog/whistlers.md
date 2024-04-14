@@ -1,5 +1,5 @@
 ---
-title: "Nature\u2019s Electromagnetic Symphony: Whistlers"
+title: "Nature\u2019s Electromagnetic Symphony -- Whistlers"
 date: 2019-11-30
 slug: ""
 description: "The one with the weird atmospheric sounds. And not to forget, a night-out."
@@ -35,7 +35,7 @@ Here's a short sound clip of what they heard:
 
 The first one, in which you would have noticed a tone of descending frequency, is called a __Whistler__, while the second, which consists of rising and falling tones of frequency is a __Chorus__. This post will talk more on whistlers as they are more extensively studied among the two.
 
-**Whistlers** are Very Low Frequency (VLF) emissions in the atmosphere that are characterised by a _tone of rapidly descending frequencies_.
+Whistlers are Very Low Frequency (VLF) emissions in the atmosphere that are characterised by a _tone of rapidly descending frequencies_.
 
 Being long-wavelength (~ 100 km!!) _EM Waves_, it's understandable that they couple into communication lines that are as long as 100 km. This explains the strange noises heard by soldiers in WWI.
 
