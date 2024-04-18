@@ -1,16 +1,4 @@
----
-layout: misc
-title: "About"
-draft: false
-menu:
-    main:
-        title: "About"
-        name: "about"
-        identifier: "about"
-        weight: 2
-math: true
----
-<img src="https://cdn.aklsh.me/memoji.png" alt="Me" class="avatar">
+# About
 
 My name is Akilesh Kannan. You'll usually find me on the internet as `aklsh`. My interests lie mostly in the hardware-software interface—low-level software (OS, networking), computer architecture and hardware accelerators. I am also huge supporter of Open-Source Software and Open Hardware.
 
@@ -33,4 +21,4 @@ The source code can be found in this GitHub repository [here](https://github.com
 The font used is IBM Plex, with IBM Plex Sans for text and IBM Plex Mono for code.
 
 [^1]: The commit history's a mess.
-[^2]: An [affiliate link](https://m.do.co/c/1f52410590e7) to get started with
+[^2]: An [affiliate link to get started with](https://m.do.co/c/1f52410590e7)
