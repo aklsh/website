@@ -6,7 +6,7 @@
     {{ $icon := anchorize . }}
     {{ if isset $currentPage.Site.Params $icon }}
       <a class="social-icons__link" rel="me" title="{{ . }}" href="{{ index $currentPage.Site.Params $icon }}" target="_blank" rel="noopener">
-        <div class="social-icons__icon" style="background-image: url('{{print "social/" $icon ".svg" | relURL}}')"></div>
+        <div class="social-icons__icon" style="background-image: url({{print "social/" $icon ".svg" | relURL}})"></div>
       </a>
     {{ end }}
   {{ end }}
