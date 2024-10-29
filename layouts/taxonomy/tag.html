@@ -1,31 +1,32 @@
-{{ define "styles" }}
-    {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/tags.scss" "dest" "css/tags.css") }}
-{{ end }}
+{{ define "styles" }} {{ $.Scratch.Set "style_opts" (dict "src"
+"scss/pages/tags.scss" "dest" "css/tags.css") }} {{ end }} {{ define "main" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
 
-{{ define "main" }}
-  {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2 2006" }}
-
-  <div class="post-list__container">
+<div class="post-list__container">
     <div class="tag__header">
-      <a href="/blog">All posts</a><span class="separator">/</span>
-      <h1 class="tag__term">{{ .Title }}</h1>
+        <a href="/blog">All posts</a><span class="separator">/</span>
+        <h1 class="tag__term">{{ lower .Title }}</h1>
     </div>
     <ul class="post-list">
-      {{ range .Data.Pages }}
-      <li class="post">
-        <div class="post__header">
-          <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format $dateFormat }}</time>
-          <h2 class="post__title">
-            <a href="{{.RelPermalink}}">{{ .Title | markdownify }}</a>
-          </h2>
-        <span class="post__desc">{{.Description}}</span>
+        {{ range .Data.Pages }}
+        <li class="post">
+            <div class="post__header">
+                <time class="post__date" datetime="{{ .Date }}"
+                    >{{ .Date.Format $dateFormat }}</time
+                >
+                <h2 class="post__title">
+                    <a href="{{.RelPermalink}}">{{ .Title | markdownify }}</a>
+                </h2>
+                <span class="post__desc">{{.Description}}</span>
+            </div>
+        </li>
+        {{ end }}
+        <div class="post-list__footer">
+            {{ partial "social-icons.html" .}}
+            <p align="center">
+                {{ replace .Site.Copyright "{year}" now.Year }}
+            </p>
         </div>
-      </li>
-      {{ end }}
-    <div class="post-list__footer">
-    {{ partial "social-icons.html" .}}
-    <p align="center">{{ replace .Site.Copyright "{year}" now.Year }}</p>
-    </div>
     </ul>
-  </div>
+</div>
 {{ end }}
