@@ -23,7 +23,7 @@ Here's somethings that you can talk to me about:
 5. Gaming. I play with a controller instead of a keyboard.
 6. Motorsport. I keep up with F1,2,3,E and am an avid fan of Scuderia Ferrari (sad noises).
 
-Here's my [resume](https://cdn.aklsh.me/resume/onepage/resume.pdf) if you're interested in my professional life.
+Here's my [resume](https://cdn.aklsh.me/resume/phd/resume.pdf) if you're interested in my professional life.
 
 ### Colophon
 This site is made with [Hugo](https://github.com/gohugoio/hugo), a static site generator written in Go. It uses a _heavily modified_ version of the [Codex theme](https://github.com/jakewies/hugo-theme-codex) by [Jake Wiesler](https://www.jakewiesler.com). It uses minimal JavaScript for rendering $\LaTeX$ and a responsive navigation burger menu, improved accessibility for screen readers.

@@ -16,13 +16,13 @@ FootnoteReturnLinkContents = "↩︎"
   github = "https://github.com/aklsh"
   email = "mailto:aklsh@tuta.io"
   linkedin = "https://www.linkedin.com/in/akilesh-kannan/"
-  webring = "https://webring.xxiivv.com/#random"
+  bluesky = "https://bsky.app/profile/aklsh.me"
   fediverse = "https://social.aklsh.me/@aklsh"
 
   # Titles for your icons (shown as tooltips), and also their display order.
   # Currently, these icons are supported:
   #   "Twitter", "GitHub", "Email", "Facebook", "GitLab", "Instagram", "LinkedIn", "YouTube"
-  iconOrder = ["Twitter", "GitHub", "Email", "LinkedIn", "Fediverse"]
+  iconOrder = ["Twitter", "GitHub", "Email", "LinkedIn", "Fediverse", "Bluesky"]
 
   description = "I'm Akilesh. This is my home on the internet."
 
