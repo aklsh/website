@@ -10,7 +10,7 @@ menu:
         weight: 2
 math: true
 ---
-<img src="https://cdn.aklsh.me/memoji.png" alt="Me" class="avatar">
+{{< avatar src="https://cdn.aklsh.me/memoji.png" alt="Me" >}}
 
 My name is Akilesh Kannan. You'll usually find me on the internet as `aklsh`. My interests lie mostly in the hardware-software interface—low-level software (OS, networking), computer architecture and hardware accelerators. I am also huge supporter of Open-Source Software and Open Hardware.
 

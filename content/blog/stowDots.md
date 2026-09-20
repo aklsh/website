@@ -13,7 +13,7 @@ Files that begin with a `.` (dot) character, are _hidden_ on all \*nix systems, 
 
 I came across the concept of dotfiles back in 2019, courtesy of HackerNews ;). Back then, I didn't have any "dotfiles" to actually manage—I was using standard macOS applications and GitHub's Atom for all my programming purposes (ik, i was a noob back then).
 
-After a while, around the start of 2020, I started using vim, switched to [`yabai`](https://github.com/koekeishiya/yabai) and started using [`skhd`](https://github.com/koekeishiya/skhd), worked around <mark>$AAPL</mark>'s ridiculous default settings (I'm looking at you, Dock) accessible only through the command-line and I found myself modifying and breaking a lot of my settings more often then not.
+After a while, around the start of 2020, I started using vim, switched to [`yabai`](https://github.com/koekeishiya/yabai) and started using [`skhd`](https://github.com/koekeishiya/skhd), worked around **$AAPL**'s ridiculous default settings (I'm looking at you, Dock) accessible only through the command-line and I found myself modifying and breaking a lot of my settings more often then not.
 
 Hence I decided to put all my dotfiles scattered everywhere under `git` like any normal person, and manually symlinked them to the necessary locations.[^1]
 [^1]: https://github.com/aklsh/dots
@@ -26,7 +26,7 @@ I now use vanilla Pop!\_OS 21.04 with Gnome and Pop-shell for a simple, just-wor
 
 That was when I found [`stow(8)`](https://www.gnu.org/software/stow/manual/stow.html).
 
-## <code style='color: #fff'>cd ~/dots && stow *</code>
+## `cd ~/dots && stow *`
 
 Now, it's as simple as that. All that was needed was a little bit of organisation of files.
 

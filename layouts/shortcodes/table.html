@@ -1,8 +1,0 @@
-{{ $htmlTable := .Inner | markdownify }}
-{{ if .Get "caption" }}
-    {{ $caption := .Get "caption" }}
-    {{ $old_cap := "</table>" }}
-    {{ $new_cap := printf "<caption style=\"color: #FBB86C; caption-side: bottom; margin-top: 5px;\">%s</caption></table>" $caption }}
-    {{ $htmlTable = replace $htmlTable $old_cap $new_cap }}
-{{ end }}
-{{ $htmlTable | safeHTML }}

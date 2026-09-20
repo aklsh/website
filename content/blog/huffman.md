@@ -11,30 +11,26 @@ math: true
 
 ## Some trivial approaches to the problem of encoding effectively
 
-Let us take a set of 4 characters and their corresponding frequencies as follows:<a name="table-1"></a>
+Let us take a set of 4 characters and their corresponding frequencies as follows:
 
-{{<table caption="Table - 1">}}
 |Character|Frequency|
 |:---:|:---:|
 |a|1|
 |b|2|
 |c|3|
 |d|4|
-{{</table>}}
 
 
 There are many ways to encode a string containing only these characters - using a binary number to represent a character is one of the most _intuitive_ methods that comes to mind when we try to do so. There are 4 characters in total. To represent each of _N_ (> 1) characters by a unique binary number, we need to have at least _k_ digits in each binary number, related by the equation
 $$k\ = \ \lceil log_2\ N\rceil$$
 Here, $N$ is 4 and so, $k$ is 2. The possible binary codes that will be used are: `00`, `01`, `10`, `11`. These will be permuted with $a$, $b$, $c$, $d$. But, in each permutation, the total number of bits that will be present in the encoded string of a fixed string will be *2s*, where _s_ is the number of total number of characters present in the string, as each character in the string will be encoded by 2 digits, no matter what permutation we use. Take for example, we need to encode the string $abbcccdddd$ (easiest example I could think of). Suppose we take the permutation:
 
-{{<table caption="Table - 2">}}
 |Character|Code|
 |:---:|:---:|
 |a|00|
 |b|01|
 |c|10|
 |d|11|
-{{</table>}}
 
 The encoded string will then be `00010110101011111111`, a string of length _20_. Even if we take any other permutation of codes, even then the _length of the encoded string will remain same_, but not the encoded string itself.
 
@@ -54,14 +50,12 @@ You may ask, "*Why not assign a code of __length 1__ to any 2 of* $x$, $y$, $z$,
 
 Supposing I have the string $xyzwxxywzyzw$, which has to be encoded. All the four characters have same frequency _3_. Let us assign the codes as follows.
 
-{{<table caption="Table - 3">}}
 |Character|Code|
 |:---:|:---:|
 |x|0|
 |y|1|
 |z|10|
 |w|01|
-{{</table>}}
 
 Notice that the codes of length _2_ are arbitrarily chosen from among `00`, `01`, `10`, `11`. We could have chosen any 2 of the 4.
 
@@ -79,14 +73,12 @@ To overcome this ambiguity, we can use the help of a very useful data structure 
 
 To recall, our string was such that it had 4 characters - $a$, $b$, $c$ and $d$, appearing with frequencies 1, 2, 3 and 4 respectively. Our initial approach was to assign the more frequent characters with codes of lesser length. So, according to that logic, code length for different characters will be:
 
-{{<table caption="Table - 4">}}
 |Character|Code Length|
 |:---:|:---:|
 |d|1|
 |c|2|
 |b|3|
 |a|3|
-{{</table>}}
 
 The 2 least frequent characters can have the same code length by having different *Least Significant Bits* (basically, the bit in the right-most place). So, $a$ and $b$ have the same code length.
 
@@ -172,14 +164,12 @@ string findCode(treeNode *root, char x)
 
 Going by this logic, the *codes for the characters* which we have will be:
 
-{{<table caption="Table - 5">}}
 |Character|Code|Code Length|
 |:---:|:---:|:---:|
 |d|0|1|
 |c|10|2|
 |b|110|3|
 |a|111|3|
-{{</table>}}
 
 
 The length of the string will be (1\*4) + (2\*3) + (3\*2) + (3\*1) = 19, is lesser than 20, which was the length of the encoded string if we used fixed length encoding.
@@ -190,40 +180,34 @@ But, does this method always work? Does this method of creating the tree and fin
 
 Let us take a set of characters (again 4 distinct ones) and their frequencies as follows:
 
-{{<table caption="Table - 6">}}
 |Character|Frequency|
 |:---:|:---:|
 |p|5|
 |q|5|
 |r|5|
 |s|5|
-{{</table>}}
 
 A case where all characters appear with equal frequency.
 
 Now, if we use the algorithm we just discussed, we will get:
 
-{{<table caption="Table - 7">}}
 |Character|Code|Code Length|
 |:---:|:---:|:---:|
 |p|0|1|
 |q|10|2|
 |r|110|3|
 |s|111|3|
-{{</table>}}
 
 Now, length of the encoding is (1\*5) + (2\*5) + (3\*5) + (3\*5) = 45. Is that the minimum we can get? **NO**. Consider the fixed length encoding of the characters. We have 4 characters and so will need at least 2 digits in the binary number used to represent a character:
 
 According to fixed length encoding we will get:
 
-{{<table caption="Table - 8">}}
 |Character|Code|Code Length|
 |:---:|:---:|:---:|
 |p|00|2|
 |q|01|2|
 |r|10|2|
 |s|11|2|
-{{</table>}}
 
 Here, total length of encoding is (2\*5) + (2\*5) + (2\*5) + (2\*5) = 40. So, by fixed length encoding, which is much much simpler than the algorithm we discussed above, we get a slightly lesser string length (40 vs 45).
 
@@ -322,16 +306,14 @@ void formHuffmanTree(vector<charWithFreq> content)
 }
 ```
 
-If we form the Huffman tree for the characters with frequencies as in [Table - 1](#table-1), we get:
+If we form the Huffman tree for the characters with frequencies as in the first table, we get:
 
-{{<table caption="Table - 9">}}
 |Character|Code|Code Length|
 |:---:|:---:|:---:|
 |a|111|3|
 |b|110|3|
 |c|10|2|
 |d|0|3|
-{{</table>}}
 
 And length of encoding will be: (1\*4) + (2\*3) + (3\*2) + (3\*1) = 19.
 

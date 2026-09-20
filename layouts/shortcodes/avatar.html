@@ -1,0 +1,3 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+<img class="avatar" src="{{ $src | safeURL }}" alt="{{ $alt }}">

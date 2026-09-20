@@ -28,7 +28,7 @@ The times I need to measure are in the range of tens of clock cycles, so I canno
 ### Enter `TSC`
 
 > The time-stamp counter (TSC) is used to count processor-clock cycles. Each time the TSC is read, it returns a monotonically-larger value than the previous value read from the `TSC`. 
-> — <cite>[AMD Programmer's Manual](https://www.amd.com/system/files/TechDocs/40332_4.05.pdf#G9.1031959)</cite>
+> — [AMD Programmer's Manual](https://www.amd.com/system/files/TechDocs/40332_4.05.pdf#G9.1031959)
 
 However, there are a lot of hidden problems to this method:
 
@@ -66,10 +66,10 @@ The 2 `MOV` instructions move the result from `EDX`:`EAX` into the locations we 
 > `LFENCE` does not execute until all prior instructions have completed locally, and no later instruction begins execution until `LFENCE` completes.
 > 
 > `MFENCE` performs a serializing operation on all load-from-memory and store-to-memory instructions that were issued prior the `MFENCE` instruction.
-> — <cite>[Intel Programmer's Manual](https://cdrdv2.intel.com/v1/dl/getContent/671200)</cite>
+> — [Intel Programmer's Manual](https://cdrdv2.intel.com/v1/dl/getContent/671200)
 
 ## A more modern approach*
-<sub><sup>* That works on Zen 2 and above platforms only</sub></sup>
+*That works on Zen 2 and above platforms only.*
 
 I was going through the AMD Programmer's Manual—to look up how AMD recommends to use `RDTSC`—and I glanced upon another instruction: `RDPRU`. This allows access to processor-specific registers in _userspace_. And one of the registers it offers access to is the `APERF` register, which is incremented at the _actual clock frequency_ of the core. This means I should be able to mitigate Problem 1 with `RDTSC`—requiring root privileges to change frequency governor and set constant clock frequency. Fortunately, I have a laptop with a Ryzen 4800HS—which meant I could actually use this!!
 
