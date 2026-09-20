@@ -23,8 +23,6 @@
     </div>
   <div class="post__footer">
     {{ partial "social-icons.html" .}}
-    <p align="center">{{ replace .Site.Copyright "{year}" now.Year }}</p>
+    <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
   </div>
 {{ end }}
-
-{{ define "scripts" }} {{ end }}

@@ -1,6 +1,6 @@
 # Override these settings with your own
 title = "Akilesh Kannan"
-languageCode = "en-us"
+locale = "en-us"
 baseURL = "https://aklsh.me"
 copyright = "© Akilesh Kannan {year} · Made with Neovim and Hugo · Licensed under CC BY-NC-SA 4.0"
 FootnoteReturnLinkContents = "↩︎"
@@ -39,10 +39,6 @@ FootnoteReturnLinkContents = "↩︎"
   term = ['html']
 
 
-# This disables Hugo's default syntax highlighting in favor
-# of prismjs. If you wish to use Hugo's default syntax highlighting
-# over prismjs, remove this. You will also need to remove the prismjs
-# vendor script in layouts/blog/single.html.
 [markup]
   [markup.highlight]
     codeFences = true

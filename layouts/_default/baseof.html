@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 
   <head>
     <title>{{ if .IsHome }}{{ .Site.Title | markdownify | plainify }}{{ else }}{{ .Title | markdownify | plainify }}{{ end }}</title>
@@ -26,8 +26,7 @@
   </head>
 
   <body>
-    {{ if (eq .Title "404 Page not found") }}
-    {{ else }}
+    {{ if ne .Kind "404" }}
       {{ partial "burger.html" .}}
 
       {{ partial "nav.html" .}}

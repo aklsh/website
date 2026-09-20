@@ -2,6 +2,10 @@
   margin: 0 auto;
   max-width: fit-content;
   width: 100%;
+
+  @media screen and (min-width: $medium) {
+    max-width: 50rem;
+  }
 }
 
 .post-list {
@@ -45,6 +49,7 @@
     margin-top: 0;
     color: $grey;
     font-size: 0.65rem;
+    text-align: center;
   }
 }
 

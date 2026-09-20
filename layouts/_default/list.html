@@ -12,7 +12,7 @@
         <div class="post__header">
           <time class="post__date" datetime="{{ .Date }}">{{ .Date.Format $dateFormat }}</time>
           <h2 class="post__title">
-            <a href="{{.RelPermalink}}">{{ .Title | markdownify }}</a>
+            <a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
           </h2>
           <span class="post__desc">{{ .Description | markdownify }}</span>
           {{ partial "tags.html" .}}
@@ -23,6 +23,6 @@
   </div>
   <div class="post-list__footer">
     {{ partial "social-icons.html" .}}
-    <p align="center">{{ replace .Site.Copyright "{year}" now.Year }}</p>
+    <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
   </div>
 {{ end }}
