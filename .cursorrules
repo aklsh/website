@@ -1,0 +1,51 @@
+# Cursor Rules for Hugo Website
+
+## Project Overview
+This is a Hugo static site generator project with:
+- Content in Markdown format
+- SCSS for styling
+- Hugo templates in Go template syntax
+- Gemini capsule content
+
+## Code Style Guidelines
+
+### Hugo Templates
+- Use Hugo's Go template syntax correctly
+- Follow Hugo's naming conventions for layouts and partials
+- Use Hugo's built-in functions and variables
+- Keep templates DRY by using partials appropriately
+
+### SCSS/CSS
+- Use SCSS features like nesting, variables, and mixins
+- Follow BEM methodology for CSS class naming
+- Keep styles modular and organized in separate files
+- Use consistent indentation (2 spaces)
+
+### Markdown Content
+- Use Hugo's front matter format (TOML/YAML)
+- Follow consistent heading hierarchy
+- Use Hugo shortcodes when appropriate
+- Keep content files organized in logical directories
+
+### File Organization
+- Keep Hugo's directory structure intact
+- Place static assets in the `static/` directory
+- Use `assets/` for processed files (SCSS, JS)
+- Follow Hugo's content organization patterns
+
+## Development Guidelines
+- Always test changes with `hugo server` before committing
+- Use Hugo's built-in development server for local testing
+- Follow Hugo's best practices for performance
+- Keep the site buildable and deployable
+
+## AI Assistant Instructions
+- When suggesting changes, consider Hugo's templating system
+- Provide context about Hugo-specific features and functions
+- Suggest improvements that align with Hugo's conventions
+- Help maintain the site's performance and accessibility
+
+## Output Variants
+- Everything except the gemini/ folder is for a standard https:// website
+- The gemini/ folder is for gemini:// capsule. It should be a mirror of the https:// one
+- Convert the markdown files into appropriate .gmi files
