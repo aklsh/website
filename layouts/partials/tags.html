@@ -1,12 +1,7 @@
-{{ $taxo := "tags" }}
-{{ with .Param $taxo }}
+{{ with .GetTerms "tags" }}
   <ul class="tags__list">
-    {{ range $tag := . }}
-      {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($tag | urlize)) }}
-        <li class="tag__item">
-          <a class="tag__link" href="{{ .RelPermalink }}">{{ $tag }}</a>
-        </li>
-      {{ end }}
+    {{ range . }}
+      <li class="tag__item"><a class="tag__link" href="{{ .RelPermalink }}">{{ .Data.Term }}</a></li>
     {{ end }}
   </ul>
 {{ end }}

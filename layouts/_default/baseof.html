@@ -2,45 +2,46 @@
 <html lang="{{ .Site.Language.Locale }}">
 
   <head>
-    <title>{{ if .IsHome }}{{ .Site.Title | markdownify | plainify }}{{ else }}{{ .Title | markdownify | plainify }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title | markdownify | plainify }}{{ end }}</title>
 
     {{ partial "meta.html" . }}
 
-    {{ partial "preloads.html" }}
+    {{ partial "preloads.html" . }}
 
-    {{ block "styles" . }} {{ end }}
-    {{ $base_styles_opts := .Scratch.Get "style_opts" | default (dict "src" "scss/pages/home.scss" "dest" "css/home.css") }}
-
-    {{ $currentPage := . }}
-
-    {{ range (slice $base_styles_opts) }}
-      {{ $style := resources.Get .src | resources.ExecuteAsTemplate .dest $currentPage | toCSS | minify | fingerprint }}
-      <link type="text/css" rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}"/>
+    {{ $style := "scss/pages/home.scss" }}
+    {{ if not (or .IsHome (eq .Kind "404")) }}
+      {{ $style = cond .IsPage (cond (eq .Layout "misc") "scss/pages/misc.scss" "scss/pages/post.scss") "scss/pages/posts.scss" }}
+    {{ end }}
+    {{ $target := replaceRE `^scss/pages/(.+)\.scss$` "css/$1.css" $style }}
+    {{ with resources.Get $style | toCSS (dict "targetPath" $target) | minify | fingerprint }}
+      <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
     {{ end }}
 
     {{ with .OutputFormats.Get "rss" }}
-      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+      <link rel="alternate" type="{{ .MediaType.Type }}" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
     {{ end }}
-
-    {{ block "links" . }} {{ end }}
   </head>
 
   <body>
     {{ if ne .Kind "404" }}
-      {{ partial "burger.html" .}}
-
-      {{ partial "nav.html" .}}
+      {{ partial "burger.html" . }}
+      {{ partial "nav.html" . }}
     {{ end }}
 
     <main>
-      {{ block "main" . }} {{ end }}
+      {{ block "main" . }}{{ end }}
+
+      {{ if not (or .IsHome (eq .Kind "404")) }}
+        {{ partial "footer.html" . }}
+      {{ end }}
     </main>
 
-    {{ block "footer" . }} {{ end }}
+    {{ if or .Params.math .Site.Params.math }}
+      {{ partial "math.html" . }}
+    {{ end }}
 
     {{ $script := resources.Get "js/index.js" | minify | fingerprint }}
-      <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity | safeHTMLAttr }}" crossorigin="anonymous"></script>
-    {{ block "scripts" . }} {{ end }}
+    <script src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
   </body>
 
 </html>

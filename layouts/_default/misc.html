@@ -1,7 +1,3 @@
-{{ define "styles" }}
-  {{ $.Scratch.Set "style_opts" (dict "src" "scss/pages/misc.scss" "dest" "css/misc.css") }}
-{{ end }}
-
 {{ define "main" }}
   <div class="page__container">
     <div class="page">
@@ -9,15 +5,8 @@
         <h1 class="page__title">{{ .Title | markdownify }}</h1>
       </header>
       <article class="page__content">
-        {{ partial "anchored-headings.html" .Content }}
-        {{ if or .Params.math .Site.Params.math }}
-          {{ partial "math.html" . }}
-        {{ end }}
+        {{ .Content }}
       </article>
     </div>
-  </div>
-  <div class="page__footer">
-    {{ partial "social-icons.html" .}}
-    <p>{{ replace .Site.Copyright "{year}" now.Year }}</p>
   </div>
 {{ end }}

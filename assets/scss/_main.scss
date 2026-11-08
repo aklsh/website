@@ -16,6 +16,17 @@ main {
   }
 }
 
+.footer {
+  padding-top: 3rem;
+
+  p {
+    margin-top: 0;
+    color: $grey;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+}
+
 ::selection {
   color: $black;
   background: $secondary;

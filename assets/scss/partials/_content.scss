@@ -1,0 +1,75 @@
+.post__title,
+.page__title {
+  margin-top: 0;
+
+  a,
+  code {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.post__content,
+.page__content {
+  h2,
+  h3 {
+    position: relative;
+
+    .anchor {
+      position: absolute;
+      top: 0;
+      text-decoration: none;
+      color: $grey;
+      font-weight: 400;
+    }
+
+    code {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  h2 .anchor {
+    left: -1.2rem;
+  }
+
+  h3 .anchor {
+    left: -1rem;
+  }
+
+  mark {
+    background-color: transparent;
+    color: $primary;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+  }
+
+  .avatar img {
+    display: block;
+    border-radius: 50%;
+    background-color: #d6d6d6;
+  }
+
+  figcaption {
+    text-align: center;
+    color: $primary;
+    margin-top: 5px;
+  }
+
+  a[href^="#fn:"],
+  a[href^="#fnref:"] {
+    text-decoration: none;
+  }
+
+  a[href^="#fn:"]:before { content: '['; }
+  a[href^="#fn:"]:after { content: ']'; }
+
+  .footnotes p {
+    margin-top: 0.5rem;
+  }
+}

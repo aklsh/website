@@ -26,6 +26,9 @@ FootnoteReturnLinkContents = "↩︎"
 
   description = "I'm Akilesh. This is my home on the internet."
 
+[taxonomies]
+  tag = "tags"
+
 [outputFormats]
   [outputFormats.RSS]
     mediatype = "application/rss"
@@ -38,13 +41,6 @@ FootnoteReturnLinkContents = "↩︎"
   taxonomy = ['html']
   term = ['html']
 
-
-[markup]
-  [markup.highlight]
-    codeFences = true
-  # Set to false to disallow raw HTML in markdown files
-  [markup.goldmark.renderer]
-      unsafe = true
 
 # Controls the navigation
 [[menu.main]]
