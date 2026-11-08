@@ -28,7 +28,7 @@ have 5 years from now :-I ??
 
 ## Software
 
-1. **Manjaro Linux**: Bleeding-edge like Arch. Noob-resistant like Ubuntu. Best of both worlds. ~~Also, I didn't have the time nor patience to install vanilla Arch Linux in the middle of a really frustratingly hard semester. Soon<sup>TM</sup>~~.
+1. **Manjaro Linux**: Bleeding-edge like Arch. Noob-resistant like Ubuntu. Best of both worlds. ~~Also, I didn't have the time nor patience to install vanilla Arch Linux in the middle of a really frustratingly hard semester. Soon™~~.
 
 2. **Windows 10**: Exclusively used for Fortnite and Among Us.
 

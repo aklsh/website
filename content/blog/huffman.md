@@ -87,25 +87,28 @@ The 2 least frequent characters can have the same code length by having differen
 This is where trees come in. The procedure is to build a binary tree (a tree in which each node has at most 2 children) as follows:
 
   **Step - 1:** Start with a root node.
-    <img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-1node.png" style="width:40px;">
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-1node.png" alt="Root node" width="40" >}}
 
   **Step - 2:** Assign it's left child to contain the character with highest frequency in the list of characters (if there are many such characters, assign any of them to this left child).
-    <img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-2node.png" style="width:100px;">
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-2node.png" alt="Root with highest-frequency child" width="100" >}}
 
   **Step - 3:** Repeat the steps 1-3 (not a typo. this is a recursive definition xD) with the right child of the current root as the new root and the list of characters as those characters that have not been assigned a place in the tree yet, till there is only 1 character left in the list, which will be the least frequent character.
-<table align="center" width="75%">
- <tr>
-  <td style="border: 0px"><img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-3node.png" alt="3-nodes" style="width:100px;"></td>
-  <td style="border: 0px"><img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-4node.png" alt="4-nodes" style="width:100px;"></td>
-  <td style="border: 0px"><img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-6node.png" alt="6-nodes" style="width:125px;"></td>
-  </tr>
-</table>
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-3node.png" alt="Three-node tree" width="100" >}}
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-4node.png" alt="Four-node tree" width="100" >}}
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-6node.png" alt="Six-node tree" width="125" >}}
 
   **Step - 4:** For the remaining character, assign it as the right child of the node that is most newly formed.
-    <img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-allnode.png" style="width:225px;">
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-allnode.png" alt="Complete character tree" width="225" >}}
 
   **Step - 5:** Now that the tree is formed, label all the edges that connect a node and it's left child as `0` and those that connect a node and it's right child as `1`.
-    <img src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-allnode-labelled.png" style="width:250px;">
+
+{{< figure src="https://cdn.aklsh.me/blog/Huffman-post/png-files/pre-huffman-allnode-labelled.png" alt="Character tree with 0 and 1 edge labels" width="250" >}}
 
 #### C++ Code
 
