@@ -7,23 +7,13 @@ Requires Hugo Extended, Python 3, make, and md2gemini (install with
 `uv tool install md2gemini` or `pipx install md2gemini`). Deployment uses rsync.
 
 The Markdown files in content/ are the single source of truth for both
-publishing targets.  `make build` first creates disposable, target-specific
-Markdown trees in .build/mdhtml/ and .build/mdgemtext/.  Hugo reads the first
-tree and scripts/build-gemini.py converts the second tree to public-gemini/.
+publishing targets.  `make build` renders them with Hugo to public/ and
+converts them to the Gemini capsule in public-gemini/ with md2gemini.
 
 Use `make http` or `make gemini` to build one target, and `make deploy` to
 build and deploy both targets.
 
-When a page needs target-specific content, use HTML comments in its Markdown:
-
-    <!-- IF HTML -->
-    HTML-only content, including raw HTML or Hugo shortcodes
-    <!-- ENDIF -->
-
-    <!-- IF GEMTEXT -->
-    Gemini-only content
-    <!-- ENDIF -->
-
-The markers are removed during preparation.  The HTML-only block therefore
-reaches Hugo, while the Gemini-only block reaches md2gemini.  `GEMINI` is
-accepted as an alias for `GEMTEXT`.
+`public-gemini/` is a complete Gemini capsule: every page is a generated
+`.gmi` file with root-relative links. Images and other large media stay on
+the HTTPS CDN and are linked from the gemtext. Point agate's `--content` at
+the deployed directory to serve it.

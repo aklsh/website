@@ -1,10 +1,7 @@
 public/
 .certificates/
 public-gemini/
-.build/
 .hugo_cache/
-gemini/*.gmi
-gemini/**/*.gmi
 __pycache__/
 resources/
 .hugo_build.lock

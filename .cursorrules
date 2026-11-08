@@ -5,7 +5,7 @@ This is a Hugo static site generator project with:
 - Content in Markdown format
 - SCSS for styling
 - Hugo templates in Go template syntax
-- Gemini capsule content
+- Gemini capsule generated from the same Markdown
 
 ## Code Style Guidelines
 
@@ -46,6 +46,5 @@ This is a Hugo static site generator project with:
 - Help maintain the site's performance and accessibility
 
 ## Output Variants
-- Everything except the gemini/ folder is for a standard https:// website
-- The gemini/ folder is for gemini:// capsule. It should be a mirror of the https:// one
-- Convert the markdown files into appropriate .gmi files
+- content/ is the source for both the https:// website and the gemini:// capsule.
+- `make build` writes the Hugo site to public/ and the capsule to public-gemini/.

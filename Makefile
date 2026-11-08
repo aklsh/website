@@ -2,13 +2,9 @@ HUGO ?= hugo
 RSYNC ?= rsync
 PYTHON ?= python3
 HUGO_CACHEDIR ?= $(CURDIR)/.hugo_cache
-CONTENT_SOURCE ?= content
-CONTENT_BUILD ?= .build
-HTML_CONTENT ?= $(CONTENT_BUILD)/mdhtml
-GEMTEXT_CONTENT ?= $(CONTENT_BUILD)/mdgemtext
+CONTENT ?= content
 
 WEB_BUILD ?= public
-GEMINI_SOURCE ?= gemini
 GEMINI_BUILD ?= public-gemini
 
 WEB_REMOTE ?= aklsh@100.93.74.76
@@ -19,25 +15,17 @@ WEB_PATH ?= /home/aklsh/sites/website
 GEMINI_REMOTE ?= aklsh@100.93.74.76
 GEMINI_PATH ?= /home/aklsh/sites/capsule
 
-.PHONY: all build prepare-html prepare-gemtext http gemini deploy deploy-http deploy-gemini clean
+.PHONY: all build http gemini deploy deploy-http deploy-gemini clean
 
 all: build
 
 build: http gemini
 
-prepare-html:
-	$(PYTHON) scripts/prepare-content.py --target html --source $(CONTENT_SOURCE) --output $(HTML_CONTENT)
-
-prepare-gemtext:
-	$(PYTHON) scripts/prepare-content.py --target gemtext --source $(CONTENT_SOURCE) --output $(GEMTEXT_CONTENT)
-
 http:
-	$(MAKE) prepare-html
-	HUGO_CACHEDIR=$(HUGO_CACHEDIR) $(HUGO) --gc --minify --contentDir $(HTML_CONTENT) --destination $(WEB_BUILD)
+	HUGO_CACHEDIR=$(HUGO_CACHEDIR) $(HUGO) --gc --minify --destination $(WEB_BUILD)
 
 gemini:
-	$(MAKE) prepare-gemtext
-	$(PYTHON) scripts/build-gemini.py --content $(GEMTEXT_CONTENT) --assets $(GEMINI_SOURCE) --output $(GEMINI_BUILD)
+	$(PYTHON) scripts/build-gemini.py --content $(CONTENT) --output $(GEMINI_BUILD)
 
 deploy: deploy-http deploy-gemini
 
@@ -50,4 +38,4 @@ deploy-gemini: gemini
 	$(RSYNC) -avz --delete $(GEMINI_BUILD)/ $(GEMINI_REMOTE):$(GEMINI_PATH)/
 
 clean:
-	rm -rf $(WEB_BUILD) $(GEMINI_BUILD) $(CONTENT_BUILD)
+	rm -rf $(WEB_BUILD) $(GEMINI_BUILD)
