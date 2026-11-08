@@ -2,7 +2,7 @@
 <div class="splash-container">
   <div class="splash">
 
-    <h1>{{ .Params.heading }}<span class="fancy">.</span></h1>
+    <h1>{{ .Params.heading | markdownify }}<span class="fancy">.</span></h1>
     {{ with .Params.handle }}
     <span class="handle">- {{ . }}</span>
     {{ end }}
