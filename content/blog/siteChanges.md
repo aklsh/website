@@ -11,7 +11,7 @@ Yup. The right time to work on revamping my site is just when exams are announce
 ## Nord-ify everything
 So the [old color scheme](https://cdn.aklsh.me/blog/palette/palette.png) I made became increasingly difficult to use as there were only 4 colors in total, and it made it hard to... well do anything that required me to use colors - syntax highlighting, backgrounds etc. Also, I was beginning to become bored of it.
 
-So, I was browsing the web (mainly r/unixporn) for some color-schemes when I came across [Nord](www.nordtheme.com). Although at first, I didn't like it very much, I disliked it the least compared to other schemes I saw.
+So, I was browsing the web (mainly r/unixporn) for some color-schemes when I came across [Nord](https://www.nordtheme.com). Although at first, I didn't like it very much, I disliked it the least compared to other schemes I saw.
 
 I decided to try out it's vim-port for a week or so before deciding. Turned out to be really good. Now I can actually use RED to show error messages with linting xD.
 
