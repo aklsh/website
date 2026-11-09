@@ -1,0 +1,6 @@
+.git
+.hugo_cache
+.certificates
+public
+resources
+__pycache__
